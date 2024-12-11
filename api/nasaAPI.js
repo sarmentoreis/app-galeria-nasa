@@ -6,7 +6,7 @@ const nasaAPI = {
   async getImages(astro, pagina) {
     try {
       const response = await axios.get(`${BASE_URL}?q=${astro}&page=${pagina}`);
-      return response.data.value;
+      return response.data.collection.items[0];
     } catch (error) {
       console.error("Erro ao obter a lista de imagens:", error);
       throw error;
